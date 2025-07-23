@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Bảng sản phẩm
     public static final String TB_SANPHAM = "tb_sanpham";
-    public static final String COT_MA_SAN_PHAM = "ma_sp";
+    public static String COT_MA_SAN_PHAM = "ma_sp";
     public static final String COT_TEN_SAN_PHAM = "ten_sp";
     public static final String COT_DON_GIA = "don_gia";
     public static final String COT_DON_VI_TINH = "don_vi_tinh";
@@ -42,7 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Bảng hóa đơn
     public static final String TB_HOADON = "tb_hoadon";
-    public static final String COT_MA_HOA_DON = "ma_hoadon";
+    public static String COT_MA_HOA_DON = "ma_hoadon";
     public static final String COT_NGAY_LAP = "ngay_lap";
     public static final String COT_TONG_TIEN = "tong_tien";
 
