@@ -25,6 +25,14 @@ public class NhanVien implements Parcelable {
         this.matKhau = matKhau;
     }
 
+    public NhanVien(String tenNhanVien, String diaChi, int chucVu, double luong, String matKhau) {
+        this.tenNhanVien = tenNhanVien;
+        this.diaChi = diaChi;
+        this.chucVu = chucVu;
+        this.luong = luong;
+        this.matKhau = matKhau;
+    }
+
     protected NhanVien(Parcel in) {
         maNhanVien = in.readString();
         tenNhanVien = in.readString();

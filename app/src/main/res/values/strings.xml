@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">JPMart</string>
+
+    <!-- Content descriptions -->
+    <string name="logo">JPMart logo</string>
+    <string name="supermarket_bg">Supermarket background image</string>
+    <string name="lock_drawable">Lock drawable</string>
+
+    <!-- Headers -->
+    <string name="reset_pass">Đổi mật khẩu</string>
+
+    <!-- Hints -->
+    <string name="account_name">Tài khoản</string>
+    <string name="password">Mật khẩu</string>
+    <string name="old_password">Mật khẩu cũ</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="confirm_password">Nhập lại mật khẩu mới</string>
+
+    <!-- Checkbox -->
+    <string name="remember_password">Ghi nhớ mật khẩu</string>
+
+    <!-- Button texts -->
+    <string name="login_button">Đăng nhập</string>
+    <string name="save_password">Lưu mật khẩu</string>
+    <string name="cancel">Hủy</string>
+
+    <!-- Button links -->
+    <string name="back_to_home"><u>Quay về trang chủ</u></string>
+
+    <!-- Sections -->
+    <string name="thong_ke_section">Thống kê</string>
+    <string name="quan_ly_section">Quản lý</string>
+    <string name="nguoi_dung_section">Người dùng</string>
+
+    <!-- Home screen buttons -->
+    <string name="doanh_thu">Doanh thu</string>
+    <string name="top_san_pham">Top sản phẩm</string>
+    <string name="top_khach_hang">Top khách hàng</string>
+    <string name="san_pham">Sản phẩm</string>
+    <string name="khach_hang">Khách hàng</string>
+    <string name="hoa_don">Hóa đơn</string>
+    <string name="danh_muc">Danh mục</string>
+    <string name="nhan_vien">Nhân viên</string>
+    <string name="doi_mat_khau">Đổi mật khẩu</string>
+    <string name="dang_xuat">Đăng xuất</string>
 </resources>

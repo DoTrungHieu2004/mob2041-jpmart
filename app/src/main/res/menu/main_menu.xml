@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_doanh_thu"
+        android:title="@string/doanh_thu"
+        android:icon="@drawable/ic_revenue"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_top_san_pham"
+        android:title="@string/top_san_pham"
+        android:icon="@drawable/ic_top_product"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_top_khach_hang"
+        android:title="@string/top_khach_hang"
+        android:icon="@drawable/ic_top_customers"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_doi_mat_khau"
+        android:title="@string/doi_mat_khau"
+        android:icon="@drawable/ic_password"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_dang_xuat"
+        android:title="@string/dang_xuat"
+        android:icon="@drawable/ic_logout"
+        app:showAsAction="never" />
+</menu>

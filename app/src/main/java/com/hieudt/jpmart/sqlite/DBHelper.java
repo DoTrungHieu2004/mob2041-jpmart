@@ -1,6 +1,8 @@
 package com.hieudt.jpmart.sqlite;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -105,8 +107,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COT_MA_KHACH_HANG + " TEXT,"
                 + COT_NGAY_LAP + " TEXT,"
                 + COT_TONG_TIEN + " INTEGER,"
-                + "FOREIGN KEY (" + COT_MA_HOA_DON + ") REFERENCES " + TB_HOADON + "(" + COT_MA_HOA_DON + "),"
-                + "FOREIGN KEY (" + COT_MA_SAN_PHAM + ") REFERENCES " + TB_SANPHAM + "(" + COT_MA_SAN_PHAM + ")"
+                + "FOREIGN KEY (" + COT_MA_NHAN_VIEN + ") REFERENCES " + TB_NHANVIEN + "(" + COT_MA_NHAN_VIEN + "),"
+                + "FOREIGN KEY (" + COT_MA_KHACH_HANG + ") REFERENCES " + TB_KHACHHANG + "(" + COT_MA_KHACH_HANG + ")"
                 + ")";
         db.execSQL(TB_HOADON_QUERY);
 
@@ -132,5 +134,30 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TB_HOADON);
         db.execSQL("DROP TABLE IF EXISTS " + TB_HOADONCHITIET);
         onCreate(db);
+    }
+
+    // Kiểm tra chức năng đổi mật khẩu
+    public boolean kiemTraMatKhauCu(String maNhanVien, String matKhauCu) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT mat_khau FROM tb_nhanvien WHERE ma_nv = ?", new String[]{maNhanVien});
+
+        if (cursor.moveToFirst()) {
+            String matKhauHienTai = cursor.getString(0);
+            cursor.close();
+            return matKhauHienTai.equals(matKhauCu);
+        }
+
+        cursor.close();
+        return false;
+    }
+
+    public boolean capNhatMatKhauMoi(String maNhanVIen, String matKhauMoi) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COT_MAT_KHAU, matKhauMoi);   // Cập nhật cột mật khẩu mới
+
+        int rowsAffected = db.update(TB_NHANVIEN, values, COT_MA_NHAN_VIEN + " = ?", new String[]{maNhanVIen});
+        return rowsAffected > 0;
     }
 }

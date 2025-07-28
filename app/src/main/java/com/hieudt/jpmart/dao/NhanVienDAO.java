@@ -40,14 +40,12 @@ public class NhanVienDAO {
         values.put(COT_MAT_KHAU, nhanVien.getMatKhau());
 
         long rows = db.insert(TB_NHANVIEN, null, values);
-        db.close();
         return rows > 0;
     }
 
     // Xóa nhân viên
     public boolean xoaNhanVien(String maNhanVien) {
         int rows = db.delete(TB_NHANVIEN, COT_MA_NHAN_VIEN + " = ?", new String[]{maNhanVien});
-        db.close();
         return rows > 0;
     }
 
@@ -62,7 +60,6 @@ public class NhanVienDAO {
         values.put(COT_MAT_KHAU, nhanVien.getMatKhau());
 
         long rows = db.update(TB_NHANVIEN, values, COT_MA_NHAN_VIEN + " = ?", new String[]{nhanVien.getMaNhanVien()});
-        db.close();
         return rows > 0;
     }
 
@@ -86,7 +83,25 @@ public class NhanVienDAO {
             } while (cursor.moveToNext());
         }
         cursor.close();
-        db.close();
         return nhanVienList;
+    }
+
+    // Lấy nhân viên bằng mã nhân viên
+    public NhanVien layNhanVienBangMaNV(String maNhanVien) {
+        db = helper.getReadableDatabase();
+        NhanVien nhanVien = null;
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_NHANVIEN + " WHERE " + COT_MA_NHAN_VIEN + " = ?", new String[]{maNhanVien});
+        if (cursor.moveToFirst()) {
+            String tenNhanVien = cursor.getString(cursor.getColumnIndexOrThrow(COT_TEN_NHAN_VIEN));
+            String diaChi = cursor.getString(cursor.getColumnIndexOrThrow(COT_DIA_CHI_NV));
+            int chucVu = cursor.getInt(cursor.getColumnIndexOrThrow(COT_CHUC_VU));
+            double luong = cursor.getDouble(cursor.getColumnIndexOrThrow(COT_LUONG));
+            String matKhau = cursor.getString(cursor.getColumnIndexOrThrow(COT_MAT_KHAU));
+
+            nhanVien = new NhanVien(tenNhanVien, diaChi, chucVu, luong, matKhau);
+        }
+        cursor.close();
+        return nhanVien;
     }
 }
