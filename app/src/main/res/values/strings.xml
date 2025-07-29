@@ -15,6 +15,10 @@
     <string name="old_password">Mật khẩu cũ</string>
     <string name="new_password">Mật khẩu mới</string>
     <string name="confirm_password">Nhập lại mật khẩu mới</string>
+    <string name="employee_name">Nhập tên nhân viên</string>
+    <string name="employee_address">Nhập địa chỉ nhân viên</string>
+    <string name="salary">Nhập lương nhân viên</string>
+    <string name="employee_password">Nhập mật khẩu nhân viên</string>
 
     <!-- Checkbox -->
     <string name="remember_password">Ghi nhớ mật khẩu</string>
@@ -23,6 +27,7 @@
     <string name="login_button">Đăng nhập</string>
     <string name="save_password">Lưu mật khẩu</string>
     <string name="cancel">Hủy</string>
+    <string name="save">Lưu</string>
 
     <!-- Button links -->
     <string name="back_to_home"><u>Quay về trang chủ</u></string>
@@ -43,4 +48,19 @@
     <string name="nhan_vien">Nhân viên</string>
     <string name="doi_mat_khau">Đổi mật khẩu</string>
     <string name="dang_xuat">Đăng xuất</string>
+
+    <!-- Placeholders -->
+    <string name="ma_nhan_vien">NV000</string>
+    <string name="ten_nhan_vien">Tên của tôi</string>
+    <string name="dia_chi_nhan_vien">Địa chỉ nhân viên</string>
+    <string name="luong">0 <u>đ</u></string>
+    <string name="chuc_vu">Chức vụ</string>
+
+    <!-- Column names -->
+    <string name="ma_nv">Mã nhân viên</string>
+    <string name="ten_nv">Tên nhân viên</string>
+    <string name="dia_chi_nv">Địa chỉ</string>
+    <string name="chuc_vu_nv">Chức vụ</string>
+    <string name="luong_nv">Lương</string>
+    <string name="mat_khau">Mật khẩu</string>
 </resources>

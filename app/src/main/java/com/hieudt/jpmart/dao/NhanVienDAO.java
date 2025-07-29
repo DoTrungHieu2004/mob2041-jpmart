@@ -50,7 +50,7 @@ public class NhanVienDAO {
     }
 
     // Sửa thông tin nhân viên
-    public boolean swaNhanVien(NhanVien nhanVien) {
+    public boolean suaNhanVien(NhanVien nhanVien) {
         ContentValues values = new ContentValues();
 
         values.put(COT_TEN_NHAN_VIEN, nhanVien.getTenNhanVien());
@@ -86,6 +86,29 @@ public class NhanVienDAO {
         return nhanVienList;
     }
 
+    // Lấy danh sách nhân viên
+    public List<NhanVien> layTatCaNhanVien() {
+        List<NhanVien> nhanVienList = new ArrayList<>();
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_NHANVIEN, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                NhanVien nv = new NhanVien(
+                        cursor.getString(0),    // Mã nhân viên
+                        cursor.getString(1),    // Tên nhân viên
+                        cursor.getString(2),    // Địa chỉ
+                        cursor.getInt(3),       // Chức vụ (0: quản lý, 1: nhân viên)
+                        cursor.getDouble(4),    // Lương
+                        cursor.getString(5)     // Mật khẩu
+                );
+                nhanVienList.add(nv);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return nhanVienList;
+    }
+
     // Lấy nhân viên bằng mã nhân viên
     public NhanVien layNhanVienBangMaNV(String maNhanVien) {
         db = helper.getReadableDatabase();
@@ -103,5 +126,23 @@ public class NhanVienDAO {
         }
         cursor.close();
         return nhanVien;
+    }
+
+    // Tạo mã nhân viên mới
+    public String taoMaNhanVienMoi() {
+        db = helper.getReadableDatabase();
+        String maNhanVienMoi = "NV1";
+
+        String query = "SELECT " + COT_MA_NHAN_VIEN + " FROM " + TB_NHANVIEN + " ORDER BY " + COT_MA_NHAN_VIEN + " DESC LIMIT 1";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            String lastMaNhanVien = cursor.getString(0);
+            int lastNumber = Integer.parseInt(lastMaNhanVien.replace("NV", ""));
+            maNhanVienMoi = "NV" + (lastNumber + 1);
+        }
+
+        cursor.close();
+        return maNhanVienMoi;
     }
 }

@@ -11,10 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.hieudt.jpmart.R;
+import com.hieudt.jpmart.screens.mgmt.NhanVienActivity;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
     int chucVu;
 
@@ -22,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.ln_nhan_vien).setOnClickListener(this);
+        findViewById(R.id.ln_doi_mat_khau).setOnClickListener(this);
+        findViewById(R.id.ln_dang_xuat).setOnClickListener(this);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,5 +61,32 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_doi_mat_khau) {
+            startActivity(new Intent(MainActivity.this, ResetPasswordActivity.class));
+            return true;
+        } else if (id == R.id.menu_dang_xuat) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.ln_nhan_vien) {
+            startActivity(new Intent(MainActivity.this, NhanVienActivity.class));
+        } else if (id == R.id.ln_doi_mat_khau) {
+            startActivity(new Intent(MainActivity.this, ResetPasswordActivity.class));
+        } else if (id == R.id.ln_dang_xuat) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
     }
 }
