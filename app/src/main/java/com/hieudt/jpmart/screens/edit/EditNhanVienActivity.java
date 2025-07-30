@@ -53,8 +53,8 @@ public class EditNhanVienActivity extends AppCompatActivity {
         currencyFormat = NumberFormat.getCurrencyInstance(new Locale("vi","VN"));
 
         chucVuList = new ArrayList<>();
-        chucVuList.add(new ChucVu(0, "Quản lý"));
-        chucVuList.add(new ChucVu(1, "Nhân viên"));
+        chucVuList.add(new ChucVu(0, "Nhân viên"));
+        chucVuList.add(new ChucVu(1, "Quản lý"));
         ArrayAdapter<ChucVu> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, chucVuList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spChucVu.setAdapter(adapter);
@@ -105,7 +105,7 @@ public class EditNhanVienActivity extends AppCompatActivity {
         double luong = Double.parseDouble(edtLuong.getText().toString().replaceAll("[^\\d]", "").trim());
         String matKhau = edtMatKhau.getText().toString().trim();
 
-        boolean isOK = false;
+        boolean isOK;
         if (type == 0) { // Sửa
             NhanVien nhanVien = new NhanVien(maNhanVien, tenNhanVien, diaChi, chucVu, luong, matKhau);
             isOK = dao.suaNhanVien(nhanVien);

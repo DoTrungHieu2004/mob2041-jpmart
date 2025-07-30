@@ -75,7 +75,7 @@ public class NhanVienDAO {
                         cursor.getString(0),    // Mã nhân viên
                         cursor.getString(1),    // Tên nhân viên
                         cursor.getString(2),    // Địa chỉ
-                        cursor.getInt(3),       // Chức vụ (0: quản lý, 1: nhân viên)
+                        cursor.getInt(3),       // Chức vụ (1: quản lý, 0: nhân viên)
                         cursor.getDouble(4),    // Lương
                         cursor.getString(5)     // Mật khẩu
                 );
@@ -98,7 +98,7 @@ public class NhanVienDAO {
                         cursor.getString(0),    // Mã nhân viên
                         cursor.getString(1),    // Tên nhân viên
                         cursor.getString(2),    // Địa chỉ
-                        cursor.getInt(3),       // Chức vụ (0: quản lý, 1: nhân viên)
+                        cursor.getInt(3),       // Chức vụ (1: quản lý, 0: nhân viên)
                         cursor.getDouble(4),    // Lương
                         cursor.getString(5)     // Mật khẩu
                 );
