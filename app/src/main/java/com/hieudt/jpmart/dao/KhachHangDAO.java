@@ -76,7 +76,7 @@ public class KhachHangDAO {
                         cursor.getString(1),    // Tên khách hàng
                         cursor.getString(2),    // Địa chỉ
                         cursor.getString(3),    // Số điên thoại
-                        cursor.getString(4)    // Email
+                        cursor.getString(4)     // Email
                 );
                 khachHangList.add(kh);
             } while (cursor.moveToNext());
@@ -84,5 +84,46 @@ public class KhachHangDAO {
         cursor.close();
         db.close();
         return khachHangList;
+    }
+
+    // Lấy danh sách khách hàng
+    public List<KhachHang> layTatCaKhachHang() {
+        List<KhachHang> khachHangList = new ArrayList<>();
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_KHACHHANG, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                KhachHang kh = new KhachHang(
+                        cursor.getString(0),    // Mã khách hàng
+                        cursor.getString(1),    // Tên khách hàng
+                        cursor.getString(2),    // Địa chỉ
+                        cursor.getString(3),    // Số điên thoại
+                        cursor.getString(4)     // Email
+                );
+                khachHangList.add(kh);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return khachHangList;
+    }
+
+    // Tạo mã khách hàng mới
+    public String taoMaKhachHangMoi() {
+        db = helper.getReadableDatabase();
+        String maKhachHangMoi = "KH1";
+
+        String query = "SELECT " + COT_MA_KHACH_HANG + " FROM " + TB_KHACHHANG + " ORDER BY " + COT_MA_KHACH_HANG + " DESC LIMIT 1";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            String lastMaKhachHang = cursor.getString(0);
+            int lastNumber = Integer.parseInt(lastMaKhachHang.replace("KH", ""));
+            maKhachHangMoi = "KH" + (lastNumber + 1);
+        }
+
+        cursor.close();
+        return maKhachHangMoi;
     }
 }

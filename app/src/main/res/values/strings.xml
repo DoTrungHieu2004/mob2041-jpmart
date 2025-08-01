@@ -19,6 +19,10 @@
     <string name="employee_address">Nhập địa chỉ nhân viên</string>
     <string name="salary">Nhập lương nhân viên</string>
     <string name="employee_password">Nhập mật khẩu nhân viên</string>
+    <string name="customer_name">Nhập tên khách hàng</string>
+    <string name="customer_address">Nhập địa chỉ khách hàng</string>
+    <string name="phone_number">Nhập số điện thoại</string>
+    <string name="customer_email">Nhập email khách hàng</string>
 
     <!-- Checkbox -->
     <string name="remember_password">Ghi nhớ mật khẩu</string>
@@ -55,6 +59,11 @@
     <string name="dia_chi_nhan_vien">Địa chỉ nhân viên</string>
     <string name="luong">0 <u>đ</u></string>
     <string name="chuc_vu">Chức vụ</string>
+    <string name="ma_khach_hang">KH000</string>
+    <string name="ten_khach_hang">Tên KH</string>
+    <string name="dia_chi_khach_hang">Địa chỉ khách hàng</string>
+    <string name="sdt">0123456789</string>
+    <string name="email_kh">khachhang@example.com</string>
 
     <!-- Column names -->
     <string name="ma_nv">Mã nhân viên</string>
@@ -63,4 +72,9 @@
     <string name="chuc_vu_nv">Chức vụ</string>
     <string name="luong_nv">Lương</string>
     <string name="mat_khau">Mật khẩu</string>
+    <string name="ma_kh">Mã khách hàng</string>
+    <string name="ten_kh">Tên khách hàng</string>
+    <string name="dia_chi_kh">Địa chỉ khách hàng</string>
+    <string name="so_dien_thoai">Số điện thoại</string>
+    <string name="email">Email</string>
 </resources>
