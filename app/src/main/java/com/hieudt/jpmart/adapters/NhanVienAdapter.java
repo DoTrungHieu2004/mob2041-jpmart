@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hieudt.jpmart.R;
 import com.hieudt.jpmart.dao.NhanVienDAO;
 import com.hieudt.jpmart.entity.NhanVien;
-import com.hieudt.jpmart.interfaces.OnNhanVienClickListener;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -33,6 +32,11 @@ public class NhanVienAdapter extends RecyclerView.Adapter<NhanVienAdapter.ViewHo
         this.danhSachNhanVien = danhSachNhanVien;
         currencyFormat = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
         dao = new NhanVienDAO(context);
+    }
+
+    public interface OnNhanVienClickListener {
+        void onEditNhanVien(NhanVien nhanVien);
+        void onDeleteNhanVien(NhanVien nhanVien);
     }
 
     public void setNhanVienListener(OnNhanVienClickListener listener) {

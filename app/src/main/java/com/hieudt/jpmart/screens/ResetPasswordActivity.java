@@ -57,6 +57,12 @@ public class ResetPasswordActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
     private void doiMatKhau() {
         String oldPass = edtMatKhauCu.getText().toString().trim();
         String newPass = edtMatKhauMoi.getText().toString().trim();

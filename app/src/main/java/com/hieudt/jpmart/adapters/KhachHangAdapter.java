@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hieudt.jpmart.R;
 import com.hieudt.jpmart.dao.KhachHangDAO;
 import com.hieudt.jpmart.entity.KhachHang;
-import com.hieudt.jpmart.interfaces.OnKhachHangClickListener;
 
 import java.util.List;
 
@@ -29,6 +28,11 @@ public class KhachHangAdapter extends RecyclerView.Adapter<KhachHangAdapter.View
         this.context = context;
         this.khachHangList = khachHangList;
         dao = new KhachHangDAO(context);
+    }
+
+    public interface OnKhachHangClickListener {
+        void onEditKhachHang(KhachHang khachHang);
+        void onDeleteKhachHang(KhachHang khachHang);
     }
 
     public void setOnKhachHangClickListener(OnKhachHangClickListener listener) {

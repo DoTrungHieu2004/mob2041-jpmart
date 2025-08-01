@@ -12,16 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hieudt.jpmart.R;
+import com.hieudt.jpmart.adapters.KhachHangAdapter;
 import com.hieudt.jpmart.adapters.NhanVienAdapter;
 import com.hieudt.jpmart.dao.NhanVienDAO;
 import com.hieudt.jpmart.entity.NhanVien;
-import com.hieudt.jpmart.interfaces.OnNhanVienClickListener;
 import com.hieudt.jpmart.screens.edit.EditNhanVienActivity;
 
 import java.util.List;
 import java.util.Objects;
 
-public class NhanVienActivity extends AppCompatActivity implements OnNhanVienClickListener {
+public class NhanVienActivity extends AppCompatActivity implements NhanVienAdapter.OnNhanVienClickListener {
     private RecyclerView rcNhanVien;
     private FloatingActionButton fabThemNhanVien;
     private Toolbar toolbar;
@@ -61,6 +61,12 @@ public class NhanVienActivity extends AppCompatActivity implements OnNhanVienCli
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

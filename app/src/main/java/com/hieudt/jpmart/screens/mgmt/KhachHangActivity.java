@@ -15,13 +15,12 @@ import com.hieudt.jpmart.R;
 import com.hieudt.jpmart.adapters.KhachHangAdapter;
 import com.hieudt.jpmart.dao.KhachHangDAO;
 import com.hieudt.jpmart.entity.KhachHang;
-import com.hieudt.jpmart.interfaces.OnKhachHangClickListener;
 import com.hieudt.jpmart.screens.edit.EditKhachHangActivity;
 
 import java.util.List;
 import java.util.Objects;
 
-public class KhachHangActivity extends AppCompatActivity implements OnKhachHangClickListener {
+public class KhachHangActivity extends AppCompatActivity implements KhachHangAdapter.OnKhachHangClickListener {
     private RecyclerView rcKhachHang;
     private FloatingActionButton fabThemKhachHang;
     private Toolbar toolbar;
