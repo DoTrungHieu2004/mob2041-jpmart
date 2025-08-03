@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.hieudt.jpmart.R;
+import com.hieudt.jpmart.screens.mgmt.DanhMucActivity;
 import com.hieudt.jpmart.screens.mgmt.KhachHangActivity;
 import com.hieudt.jpmart.screens.mgmt.NhanVienActivity;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.ln_nhan_vien).setOnClickListener(this);
         findViewById(R.id.ln_khach_hang).setOnClickListener(this);
+        findViewById(R.id.ln_danh_muc).setOnClickListener(this);
         findViewById(R.id.ln_doi_mat_khau).setOnClickListener(this);
         findViewById(R.id.ln_dang_xuat).setOnClickListener(this);
 
@@ -86,6 +88,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(MainActivity.this, NhanVienActivity.class));
         } else if (id == R.id.ln_khach_hang) {
             startActivity(new Intent(MainActivity.this, KhachHangActivity.class));
+        } else if (id == R.id.ln_danh_muc) {
+            startActivity(new Intent(MainActivity.this, DanhMucActivity.class));
         } else if (id == R.id.ln_doi_mat_khau) {
             startActivity(new Intent(MainActivity.this, ResetPasswordActivity.class));
         } else if (id == R.id.ln_dang_xuat) {

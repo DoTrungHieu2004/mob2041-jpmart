@@ -32,14 +32,12 @@ public class DanhMucDAO {
         values.put(COT_TEN_DANH_MUC, danhMuc.getTenDanhMuc());
 
         long rows = db.insert(TB_DANHMUC, null, values);
-        db.close();
         return rows > 0;
     }
 
     // Xóa danh mục
     public boolean xoaDanhMuc(String maDanhMuc) {
         int rows = db.delete(TB_DANHMUC, COT_MA_DANH_MUC + " = ?", new String[]{maDanhMuc});
-        db.close();
         return rows > 0;
     }
 
@@ -49,7 +47,6 @@ public class DanhMucDAO {
         values.put(COT_TEN_DANH_MUC, danhMuc.getTenDanhMuc());
 
         int rows = db.update(TB_DANHMUC, values, COT_MA_DANH_MUC + " = ?", new String[]{danhMuc.getMaDanhMuc()});
-        db.close();
         return rows > 0;
     }
 
@@ -69,7 +66,44 @@ public class DanhMucDAO {
             } while (cursor.moveToNext());
         }
         cursor.close();
-        db.close();
         return danhMucList;
+    }
+
+    // Lấy tất cả danh mục
+    public List<DanhMuc> layTatCaDanhMuc() {
+        List<DanhMuc> danhMucList = new ArrayList<>();
+        db = helper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_DANHMUC, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                DanhMuc dm = new DanhMuc(
+                        cursor.getString(0),    // Mã danh mục
+                        cursor.getString(1)     // Tên danh mục
+                );
+                danhMucList.add(dm);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return danhMucList;
+    }
+
+    // Tạo mã danh mục mới
+    public String taoMaDanhMucMoi() {
+        db = helper.getReadableDatabase();
+        String maDanhMucMoi = "DM1";
+
+        String query = "SELECT " + COT_MA_DANH_MUC + " FROM " + TB_DANHMUC + " ORDER BY " + COT_MA_DANH_MUC + " DESC LIMIT 1";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            String lastMaDanhMuc = cursor.getString(0);
+            int lastNumber = Integer.parseInt(lastMaDanhMuc.replace("DM", ""));
+            maDanhMucMoi = "DM" + (lastNumber + 1);
+        }
+
+        cursor.close();
+        return maDanhMucMoi;
     }
 }

@@ -23,6 +23,7 @@
     <string name="customer_address">Nhập địa chỉ khách hàng</string>
     <string name="phone_number">Nhập số điện thoại</string>
     <string name="customer_email">Nhập email khách hàng</string>
+    <string name="category_name">Nhập tên danh mục</string>
 
     <!-- Checkbox -->
     <string name="remember_password">Ghi nhớ mật khẩu</string>
@@ -64,6 +65,8 @@
     <string name="dia_chi_khach_hang">Địa chỉ khách hàng</string>
     <string name="sdt">0123456789</string>
     <string name="email_kh">khachhang@example.com</string>
+    <string name="ma_danh_muc">DM000</string>
+    <string name="ten_danh_muc">Danh mục</string>
 
     <!-- Column names -->
     <string name="ma_nv">Mã nhân viên</string>
@@ -77,4 +80,6 @@
     <string name="dia_chi_kh">Địa chỉ khách hàng</string>
     <string name="so_dien_thoai">Số điện thoại</string>
     <string name="email">Email</string>
+    <string name="ma_dm">Mã danh mục</string>
+    <string name="ten_dm">Tên danh mục</string>
 </resources>
