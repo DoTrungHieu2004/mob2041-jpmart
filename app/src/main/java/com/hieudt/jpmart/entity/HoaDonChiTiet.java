@@ -20,6 +20,14 @@ public class HoaDonChiTiet {
         this.donGia = donGia;
     }
 
+    public HoaDonChiTiet(String maCTHD, String maHoaDon, String maSanPham, int soLuong, double donGia) {
+        this.maCTHD = maCTHD;
+        this.maHoaDon = maHoaDon;
+        this.maSanPham = maSanPham;
+        this.soLuong = soLuong;
+        this.donGia = donGia;
+    }
+
     public String getMaCTHD() {
         return maCTHD;
     }

@@ -128,4 +128,9 @@ public class KhachHang implements Parcelable {
         parcel.writeDouble(tongChiTieu);
         parcel.writeInt(avatar);
     }
+
+    @Override
+    public String toString() {
+        return this.tenKhachHang + " - " + this.soDienThoai;
+    }
 }

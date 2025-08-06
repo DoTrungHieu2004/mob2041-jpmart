@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.cart.GioHangActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple" />
+
+    <Spinner
+        android:id="@+id/sp_khach_hang"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_gio_hang"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_tong_tien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tong_tien"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_thanh_toan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple"
+            android:text="@string/payment"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

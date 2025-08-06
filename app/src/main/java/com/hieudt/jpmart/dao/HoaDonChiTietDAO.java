@@ -78,4 +78,22 @@ public class HoaDonChiTietDAO {
         db.close();
         return HDCTlist;
     }
+
+    // Tạo mã hóa đơn mới
+    public String taoMaHDCTMoi() {
+        db = helper.getReadableDatabase();
+        String maHDCTMoi = "HDCT1";
+
+        String query = "SELECT " + COT_MA_HDCT + " FROM " + TB_HOADONCHITIET + " ORDER BY " + COT_MA_HDCT + " DESC LIMIT 1";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            String lastMaHDCT = cursor.getString(0);
+            int lastNumber = Integer.parseInt(lastMaHDCT.replace("HDCT", ""));
+            maHDCTMoi = "HDCT" + (lastNumber + 1);
+        }
+
+        cursor.close();
+        return maHDCTMoi;
+    }
 }

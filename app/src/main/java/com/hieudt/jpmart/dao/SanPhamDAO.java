@@ -93,4 +93,22 @@ public class SanPhamDAO {
         db.close();
         return sanPhamList;
     }
+
+    // Tạo mã sản phẩm mới
+    public String taoMaSanPhamMoi() {
+        db = helper.getReadableDatabase();
+        String maSanPhamMoi = "SP1";
+
+        String query = "SELECT " + COT_MA_SAN_PHAM + " FROM " + TB_SANPHAM + " ORDER BY " + COT_MA_SAN_PHAM + " DESC LIMIT 1";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            String lastMaSanPham = cursor.getString(0);
+            int lastNumber = Integer.parseInt(lastMaSanPham.replace("SP", ""));
+            maSanPhamMoi = "SP" + (lastNumber + 1);
+        }
+
+        cursor.close();
+        return maSanPhamMoi;
+    }
 }

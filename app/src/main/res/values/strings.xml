@@ -8,6 +8,7 @@
 
     <!-- Headers -->
     <string name="reset_pass">Đổi mật khẩu</string>
+    <string name="product_list">Danh sách sản phẩm</string>
 
     <!-- Hints -->
     <string name="account_name">Tài khoản</string>
@@ -24,6 +25,12 @@
     <string name="phone_number">Nhập số điện thoại</string>
     <string name="customer_email">Nhập email khách hàng</string>
     <string name="category_name">Nhập tên danh mục</string>
+    <string name="product_search_hint">Nhập tên sản phẩm…</string>
+    <string name="product_name">Nhập tên sản phẩm</string>
+    <string name="product_price">Nhập giá sản phẩm</string>
+    <string name="number_of_products">Nhập số lượng</string>
+    <string name="calculate_unit">Nhập đơn vị tính</string>
+    <string name="import_date">Nhập ngày nhập</string>
 
     <!-- Checkbox -->
     <string name="remember_password">Ghi nhớ mật khẩu</string>
@@ -33,6 +40,7 @@
     <string name="save_password">Lưu mật khẩu</string>
     <string name="cancel">Hủy</string>
     <string name="save">Lưu</string>
+    <string name="payment">Thanh toán</string>
 
     <!-- Button links -->
     <string name="back_to_home"><u>Quay về trang chủ</u></string>
@@ -67,6 +75,10 @@
     <string name="email_kh">khachhang@example.com</string>
     <string name="ma_danh_muc">DM000</string>
     <string name="ten_danh_muc">Danh mục</string>
+    <string name="ten_san_pham">Sản phẩm</string>
+    <string name="gia_san_pham">1.000 <u>đ</u></string>
+    <string name="san_pham_ton_kho">Tồn kho: 0</string>
+    <string name="tong_tien">Tổng tiền: 0đ</string>
 
     <!-- Column names -->
     <string name="ma_nv">Mã nhân viên</string>
@@ -82,4 +94,10 @@
     <string name="email">Email</string>
     <string name="ma_dm">Mã danh mục</string>
     <string name="ten_dm">Tên danh mục</string>
+    <string name="ma_sp">Mã sản phẩm</string>
+    <string name="ten_sp">Tên sản phẩm</string>
+    <string name="gia_sp">Giá sản phẩm</string>
+    <string name="so_luong">Số lượng</string>
+    <string name="don_vi_tinh">Đơn vị tính</string>
+    <string name="ngay_nhap">Ngày nhập</string>
 </resources>

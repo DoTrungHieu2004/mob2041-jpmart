@@ -9,6 +9,7 @@ import static com.hieudt.jpmart.sqlite.DBHelper.TB_HOADON;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.hieudt.jpmart.entity.HoaDon;
@@ -43,5 +44,23 @@ public class HoaDonDAO {
         int rows = db.delete(TB_HOADON, COT_MA_HOA_DON + " = ?", new String[]{maHoaDon});
         db.close();
         return rows > 0;
+    }
+
+    // Tạo mã hóa đơn mới
+    public String taoMaHoaDonMoi() {
+        db = helper.getReadableDatabase();
+        String maHoaDonMoi = "HD1";
+
+        String query = "SELECT " + COT_MA_HOA_DON + " FROM " + TB_HOADON + " ORDER BY " + COT_MA_HOA_DON + " DESC LIMIT 1";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            String lastMaHoaDon = cursor.getString(0);
+            int lastNumber = Integer.parseInt(lastMaHoaDon.replace("HD", ""));
+            maHoaDonMoi = "HD" + (lastNumber + 1);
+        }
+
+        cursor.close();
+        return maHoaDonMoi;
     }
 }

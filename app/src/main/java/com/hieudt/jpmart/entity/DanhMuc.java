@@ -60,4 +60,9 @@ public class DanhMuc implements Parcelable {
         parcel.writeString(maDanhMuc);
         parcel.writeString(tenDanhMuc);
     }
+
+    @Override
+    public String toString() {
+        return this.tenDanhMuc;
+    }
 }
