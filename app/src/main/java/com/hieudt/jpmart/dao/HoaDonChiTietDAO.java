@@ -40,7 +40,6 @@ public class HoaDonChiTietDAO {
         values.put(COT_DON_GIA, hdct.getDonGia());
 
         db.insert(TB_HOADONCHITIET, null, values);
-        db.close();
     }
 
     // Lấy tất cả hóa đơn chi tiết
@@ -75,11 +74,10 @@ public class HoaDonChiTietDAO {
         }
 
         cursor.close();
-        db.close();
         return HDCTlist;
     }
 
-    // Tạo mã hóa đơn mới
+    // Tạo mã hóa đơn chi tiết mới
     public String taoMaHDCTMoi() {
         db = helper.getReadableDatabase();
         String maHDCTMoi = "HDCT1";

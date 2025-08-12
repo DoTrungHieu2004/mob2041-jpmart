@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.hieudt.jpmart.R;
 import com.hieudt.jpmart.screens.mgmt.DanhMucActivity;
+import com.hieudt.jpmart.screens.mgmt.HoaDonActivity;
 import com.hieudt.jpmart.screens.mgmt.KhachHangActivity;
 import com.hieudt.jpmart.screens.mgmt.NhanVienActivity;
 import com.hieudt.jpmart.screens.mgmt.SanPhamActivity;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.ln_khach_hang).setOnClickListener(this);
         findViewById(R.id.ln_danh_muc).setOnClickListener(this);
         findViewById(R.id.ln_san_pham).setOnClickListener(this);
+        findViewById(R.id.ln_hoa_don).setOnClickListener(this);
         findViewById(R.id.ln_doi_mat_khau).setOnClickListener(this);
         findViewById(R.id.ln_dang_xuat).setOnClickListener(this);
 
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(MainActivity.this, DanhMucActivity.class));
         } else if (id == R.id.ln_san_pham) {
             startActivity(new Intent(MainActivity.this, SanPhamActivity.class));
+        } else if (id == R.id.ln_hoa_don) {
+            startActivity(new Intent(MainActivity.this, HoaDonActivity.class));
         } else if (id == R.id.ln_doi_mat_khau) {
             startActivity(new Intent(MainActivity.this, ResetPasswordActivity.class));
         } else if (id == R.id.ln_dang_xuat) {

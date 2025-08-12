@@ -79,6 +79,8 @@
     <string name="gia_san_pham">1.000 <u>đ</u></string>
     <string name="san_pham_ton_kho">Tồn kho: 0</string>
     <string name="tong_tien">Tổng tiền: 0đ</string>
+    <string name="ma_hoa_don">HD000</string>
+    <string name="ngay_example">00/00/0000</string>
 
     <!-- Column names -->
     <string name="ma_nv">Mã nhân viên</string>
@@ -100,4 +102,7 @@
     <string name="so_luong">Số lượng</string>
     <string name="don_vi_tinh">Đơn vị tính</string>
     <string name="ngay_nhap">Ngày nhập</string>
+    <string name="ma_hd">Mã hóa đơn</string>
+    <string name="ngay_lap">Ngày lập</string>
+    <string name="tong_tien_column">Tổng tiền</string>
 </resources>

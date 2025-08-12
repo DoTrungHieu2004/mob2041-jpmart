@@ -15,6 +15,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.hieudt.jpmart.entity.HoaDon;
 import com.hieudt.jpmart.sqlite.DBHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HoaDonDAO {
     private SQLiteDatabase db;
     private DBHelper helper;
@@ -35,15 +38,36 @@ public class HoaDonDAO {
         values.put(COT_TONG_TIEN, hoaDon.getTongTien());
 
         long rows = db.insert(TB_HOADON, null, values);
-        db.close();
         return rows > 0;
     }
 
     // Xóa hóa đon
     public boolean xoaHoaDon(String maHoaDon) {
         int rows = db.delete(TB_HOADON, COT_MA_HOA_DON + " = ?", new String[]{maHoaDon});
-        db.close();
         return rows > 0;
+    }
+
+    // Lây tất cả hóa đơn
+    public List<HoaDon> layTatCaHoaDon() {
+        List<HoaDon> hoaDonList = new ArrayList<>();
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_HOADON, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                HoaDon hoaDon = new HoaDon(
+                        cursor.getString(0),    // Mã hóa đơn
+                        cursor.getString(1),    // Mã nhân viên
+                        cursor.getString(2),    // Mã khách hàng
+                        cursor.getString(3),    // Ngày lập
+                        cursor.getDouble(4)     // Tổng tiền
+                );
+                hoaDonList.add(hoaDon);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return hoaDonList;
     }
 
     // Tạo mã hóa đơn mới
