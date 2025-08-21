@@ -119,7 +119,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/top_san_pham"
+                            android:text="@string/top_khach_hang"
                             android:textAlignment="center"
                             android:textColor="#2e3d3d"
                             android:textSize="14sp"

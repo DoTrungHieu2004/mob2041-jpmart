@@ -16,6 +16,9 @@ import com.hieudt.jpmart.screens.mgmt.HoaDonActivity;
 import com.hieudt.jpmart.screens.mgmt.KhachHangActivity;
 import com.hieudt.jpmart.screens.mgmt.NhanVienActivity;
 import com.hieudt.jpmart.screens.mgmt.SanPhamActivity;
+import com.hieudt.jpmart.screens.statistic.DoanhThuActivity;
+import com.hieudt.jpmart.screens.statistic.TopKhachHangActivity;
+import com.hieudt.jpmart.screens.statistic.TopSanPhamActivity;
 
 import java.util.Objects;
 
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.ln_danh_muc).setOnClickListener(this);
         findViewById(R.id.ln_san_pham).setOnClickListener(this);
         findViewById(R.id.ln_hoa_don).setOnClickListener(this);
+        findViewById(R.id.ln_doanh_thu).setOnClickListener(this);
+        findViewById(R.id.ln_top_san_pham).setOnClickListener(this);
+        findViewById(R.id.ln_top_khach_hang).setOnClickListener(this);
         findViewById(R.id.ln_doi_mat_khau).setOnClickListener(this);
         findViewById(R.id.ln_dang_xuat).setOnClickListener(this);
 
@@ -80,6 +86,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.menu_dang_xuat) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
+        } else if (id == R.id.menu_doanh_thu) {
+            startActivity(new Intent(MainActivity.this, DoanhThuActivity.class));
+            return true;
+        } else if (id == R.id.ln_top_san_pham) {
+            startActivity(new Intent(MainActivity.this, TopSanPhamActivity.class));
+            return true;
+        } else if (id == R.id.ln_top_khach_hang) {
+            startActivity(new Intent(MainActivity.this, TopKhachHangActivity.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -98,6 +113,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(MainActivity.this, SanPhamActivity.class));
         } else if (id == R.id.ln_hoa_don) {
             startActivity(new Intent(MainActivity.this, HoaDonActivity.class));
+        } else if (id == R.id.ln_doanh_thu) {
+            startActivity(new Intent(MainActivity.this, DoanhThuActivity.class));
+        } else if (id == R.id.ln_top_san_pham) {
+            startActivity(new Intent(MainActivity.this, TopSanPhamActivity.class));
+        } else if (id == R.id.ln_top_khach_hang) {
+            startActivity(new Intent(MainActivity.this, TopKhachHangActivity.class));
         } else if (id == R.id.ln_doi_mat_khau) {
             startActivity(new Intent(MainActivity.this, ResetPasswordActivity.class));
         } else if (id == R.id.ln_dang_xuat) {

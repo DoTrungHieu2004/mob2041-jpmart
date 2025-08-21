@@ -31,6 +31,8 @@
     <string name="number_of_products">Nhập số lượng</string>
     <string name="calculate_unit">Nhập đơn vị tính</string>
     <string name="import_date">Nhập ngày nhập</string>
+    <string name="from_date">Từ ngày</string>
+    <string name="to_date">Đến ngày</string>
 
     <!-- Checkbox -->
     <string name="remember_password">Ghi nhớ mật khẩu</string>
@@ -41,6 +43,9 @@
     <string name="cancel">Hủy</string>
     <string name="save">Lưu</string>
     <string name="payment">Thanh toán</string>
+    <string name="revenue">Thống kê doanh thu</string>
+    <string name="top_products">Thống kê top sản phẩm</string>
+    <string name="top_customers">Thống kê top khách hàng</string>
 
     <!-- Button links -->
     <string name="back_to_home"><u>Quay về trang chủ</u></string>
@@ -81,6 +86,9 @@
     <string name="tong_tien">Tổng tiền: 0đ</string>
     <string name="ma_hoa_don">HD000</string>
     <string name="ngay_example">00/00/0000</string>
+    <string name="doanh_thu_example">0 VNĐ</string>
+    <string name="tong_so_luong">Tổng số lượng: 0</string>
+    <string name="tong_chi_tieu">Tổng chi tiêu: 0 VNĐ</string>
 
     <!-- Column names -->
     <string name="ma_nv">Mã nhân viên</string>
